@@ -44,6 +44,9 @@
 @property (nonatomic) BOOL searchBar; //Adds a search bar. Implement predicateForString:inTableView:  - called when user types in search bar
 @property (nonatomic, getter = canSwipeToDelete) BOOL swipeToDelete; //Deletes a cell and the object the cell is displaying when the cell is swiped.
 
+@property (nonatomic) BOOL paused; // Pause fetched result controller handling.
+                                   // Default = NO, use in ViewWillAppear & ViewWillDissappear
+
 @property (nonatomic) BOOL sectionIndex; //Displays the first letter of the section name on the right.
 
 - (void)refresh; //Calls perform fetch, handles any errors, then reloads the tableview

@@ -126,6 +126,18 @@
     }
 }
 
+- (void)setPaused:(BOOL)paused {
+  _paused = paused;
+  if (paused) {
+    self.fetchedResultsController.delegate = nil;
+    return;
+  }
+
+  self.fetchedResultsController.delegate = self;
+  [self.fetchedResultsController performFetch:NULL];
+  [self reloadData];
+}
+
 - (NSManagedObject*)selectedItem {
   NSIndexPath *path = self.indexPathForSelectedRow;
   if (!path) {
