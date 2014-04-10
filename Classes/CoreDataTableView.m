@@ -126,6 +126,15 @@
     }
 }
 
+- (NSManagedObject*)selectedItem {
+  NSIndexPath *path = self.indexPathForSelectedRow;
+  if (!path) {
+    return nil;
+  }
+
+  return [self.fetchedResultsController objectAtIndexPath:path];
+}
+
 #pragma mark - FetchedResultsController
 
 - (void)setFetchedResultsController:(NSFetchedResultsController *)fetchedResultsController
