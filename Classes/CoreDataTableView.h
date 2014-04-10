@@ -33,6 +33,8 @@
 @property (nonatomic) UIViewController <CoreDataTableViewDelegate>* coreDataTableViewDelegate;
 
 @property (nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, copy) NSString *cellReuseIdentifier;
+
 //Defaults are all NO
 @property (nonatomic, getter = isEditable) BOOL editable; //Displays an edit button that puts the tableview into edit mode.
 @property (nonatomic) BOOL addButton; //An add button is displayed in edit mdoe. ConfigureNewObject called when tapped;

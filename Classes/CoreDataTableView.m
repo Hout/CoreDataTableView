@@ -178,9 +178,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [self dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    if (!cell) cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+  UITableViewCell *cell = [self dequeueReusableCellWithIdentifier:self.cellReuseIdentifier forIndexPath:indexPath];
     
     NSManagedObject *managedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
     [self.coreDataTableViewDelegate configureCell:cell withObject:managedObject forTableView:self];
